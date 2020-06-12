@@ -1,0 +1,17 @@
+Pseudocode Algoritma Longest Common Substring Problem :
+
+Input String s,t
+write k = length of s
+write l = length of t
+//procedure
+Static lcs
+If x == 0 or y == 0 then 
+   return total
+End If
+If s(x-1) == t(y-1)
+   total = (x-1,x-y, total+1
+End If
+total = Math.max(total, Math.max(lcs(x, y-1,total :0), lcs(x - 1, y,total = 0)
+return total
+Print (lcs(k,l,total:0)
+

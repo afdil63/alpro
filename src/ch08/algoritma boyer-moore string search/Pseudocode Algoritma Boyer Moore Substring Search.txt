@@ -1,0 +1,31 @@
+Pseudocode Algoritma Boyer Moore Substring Search :
+
+procedure BoyerMooreSearch(
+    input a, b : integer,
+    input P : array[0..b-1] of char,
+    input T : array[0..a-1] of char,
+    output ketemu : array[0..a-1] of boolean
+)
+
+Deklarasi:
+x, y, shift, bmBcShift, bmGsShift: integer 
+BmBc : array[0..255] of interger
+BmGs : array[0..b-1] of interger
+
+Algoritme:
+preBmBc(b, P, BmBc) 
+preBmGs(b, P, BmGs) 
+x:=0
+while (x<= a-b) do
+    y:=b-1
+    while (y >=0 b and T[x+y] = P[y]) do 
+       y:=y-1
+    endwhile
+    if(y < 0) then
+       ketemu[x]:=true;
+endif
+
+    bmBcShift:= BmBc[chartoint(T[x+y])]-b+y+1
+    bmGsShift:= BmGs[y]
+    shift:= max(bmBcShift, bmGsShift)
+    x:= x+shift
